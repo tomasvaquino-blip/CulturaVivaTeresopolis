@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura Viva Teresópolis</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            padding: 48px 24px;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .header-copy {
+            flex: 1;
+        }
+
+        .header-images {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 46%;
+            max-width: 560px;
+        }
+
+        .header-images img {
+            display: block;
+            object-fit: contain;
+        }
+
+        .header-landmark {
+            width: 58%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .header-culture {
+            width: 38%;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 32px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 24px;
+            }
+
+            .header-images {
+                width: 100%;
+                align-self: center;
+            }
+
+            header h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        nav {
+            background: #143d16;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.1);
+        }
+
+        .hero {
+            background: #e8f5e9;
+            border-left: 8px solid #2e7d32;
+        }
+
+        .perfil {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .perfil img {
+            width: 350px;
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .arte-saude-conteudo {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .arte-saude-conteudo img {
+            width: 100%;
+            max-width: 360px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .arte-saude-texto {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 20px;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .quote {
+            background: #f1f8e9;
+            border-left: 5px solid #4caf50;
+            padding: 18px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .ods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 20px;
+        }
+
+        .ods div {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        }
+
+        footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .mapa-localizacao {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 20px auto 0;
+            border: 0;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="header-copy">
+            <h1>Cultura Viva Teresópolis</h1>
+            <p>
+                Mapeamento de iniciativas culturais e de arte-educação do município de Teresópolis
+            </p>
+        </div>
+        <div class="header-images">
+            <img class="header-landmark" src="Parque-Nacional-da-Serra-dos-Orgaos-1-1.webp"
+                 alt="Dedo de Deus na Serra dos Órgãos, em Teresópolis">
+            <img class="header-culture"
+                 src="a-cultura-brasileira-e-bastante-diversificada-ela-e-resultado-da-influencia-de-diferentes-povos.webp"
+                 alt="Ilustração da diversidade da cultura brasileira">
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#projeto">Projeto</a></li>
+        <li><a href="#bianca">Bianca</a></li>
+        <li><a href="#xando">Xando Pernambuco</a></li>
+        <li><a href="#espaco">Espaço Cultural</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#frases">Entrevista</a></li>
+        <li><a href="#frases-artistas">Frases de Artistas</a></li>
+        <li><a href="#ods">ODS</a></li>
+    </ul>
+</nav>
+
+<section id="projeto">
+    <div class="card hero">
+        <h2>Sobre o Projeto</h2>
+
+        <p>
+            O projeto Cultura Viva Teresópolis tem como objetivo mapear,
+            registrar e divulgar iniciativas culturais e de arte-educação
+            existentes no município. A proposta busca fortalecer a memória
+            cultural local, ampliar a visibilidade de artistas e espaços
+            culturais e contribuir para o desenvolvimento sustentável da cidade.
+        </p>
+    </div>
+</section>
+
+<section id="arte-saude">
+    <div class="card">
+        <h2>Arte e Saúde Mental</h2>
+
+        <div class="arte-saude-conteudo">
+            <img src="saudemental.avif"
+                 alt="Imagem sobre arte e saúde mental">
+
+            <div class="arte-saude-texto">
+                <p>
+                    A arte é uma importante aliada do bem-estar e da saúde mental.
+                    Ao desenhar, pintar, dançar, tocar, cantar ou criar, cada pessoa
+                    encontra maneiras de expressar sentimentos, aliviar tensões e
+                    entrar em contato consigo mesma. Não é preciso ser artista nem
+                    fazer algo perfeito: o valor está também no processo, na liberdade
+                    de experimentar e no prazer de criar.
+                </p>
+
+                <br>
+
+                <p>
+                    Compartilhada em espaços culturais e atividades coletivas, a arte
+                    ainda aproxima pessoas, fortalece vínculos e ajuda a construir
+                    comunidades mais acolhedoras. Promover o acesso à cultura é,
+                    portanto, valorizar a criatividade, a convivência e diferentes
+                    formas de cuidar da qualidade de vida. A arte não substitui o
+                    acompanhamento profissional quando ele é necessário, mas pode
+                    fazer parte de uma vida mais expressiva, conectada e significativa.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="bianca">
+
+    <h2>Artista Destaque</h2>
+
+    <div class="card perfil">
+
+        <img src="bianca-entrevista.jpg"
+             alt="Entrevista realizada para o projeto Cultura Viva Teresópolis"
+             width="320">
+
+        <div>
+            <h3>Bianca da Cunha de Aquino</h3>
+
+            <p>
+                Bianca da Cunha de Aquino é uma proponente cultural atuante em
+                Teresópolis (RJ), cuja presença se destaca no fortalecimento das
+                políticas públicas de incentivo à arte local. Com foco no segmento
+                de Artes Visuais, sua produção vai além do ateliê individual ao
+                propor oficinas integradas a mostras artísticas, aliando a criação
+                visual à democratização do conhecimento. Ao ter seus projetos
+                habilitados em editais oficiais do município, Bianca consolida seu
+                papel na cena contemporânea fluminense, contribuindo para a formação
+                de público, a descentralização cultural e o desenvolvimento artístico
+                da Região Serrana.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="xando">
+
+    <h2>Artista Destaque</h2>
+
+    <div class="card perfil">
+        <img src="Xando.webp" alt="Xando Pernambucano">
+
+        <div>
+            <h3>Xando Pernambucano</h3>
+
+            <p>
+                Xando Pernambuco (também chamado de Xando Pernambucano) é um artista
+                plástico, escultor e articulador cultural nascido em Olinda que
+                escolheu Teresópolis, no Rio de Janeiro, como palco para sua arte,
+                atuando como uma ponte entre as tradições nordestinas e o cenário
+                fluminense. É idealizador e fundador do Bloco Dona Teresinha, criado
+                em 2006, que leva às ruas serranas a tradição dos bonecos gigantes
+                inspirados no Carnaval de sua terra natal. Também participa da música
+                regional como tocador de coco em projetos como o Cultura de Raiz, na
+                Casa de Cultura Adolpho Bloch. Nas artes visuais, destaca-se por suas
+                esculturas e modelagens que valorizam a memória popular brasileira,
+                incluindo o busto em homenagem ao compositor Aldir Blanc em
+                Teresópolis. No audiovisual, dirigiu o documentário “Vidas de
+                Brinquedo” (2021), produção viabilizada pela Lei Aldir Blanc que
+                resgata a história de fazedores de cultura locais.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<section id="espaco">
+
+    <h2>Espaço Cultural AquinoCunha</h2>
+
+    <div class="card">
+
+        <h3>Sítio Vô Zé</h3>
+
+        <p>
+            O Sítio Vô Zé, aninhado no Vale do Paquequer, em Teresópolis (RJ),
+            é um refúgio de paz em meio à Região Serrana do Rio de Janeiro.
+            Cercado pela Mata Atlântica e pelo clima ameno das montanhas, o lugar
+            oferece um ambiente acolhedor para quem busca escapar da rotina urbana
+            e se reconectar com a simplicidade da vida no campo.
+        </p>
+
+        <p>
+            Sua importância está também em promover o bem-estar e fortalecer os
+            laços familiares. Em um mundo cada vez mais digital e acelerado, o
+            espaço favorece a convivência, o lazer das crianças e o descanso dos
+            adultos. Além do valor afetivo para quem o visita, o sítio contribui
+            para o turismo ecológico e rural da região, valorizando as riquezas
+            naturais do Vale do Paquequer e incentivando a preservação ambiental.
+            É um lugar para criar memórias, celebrar momentos especiais ou renovar
+            as energias em meio à natureza.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="galeria">
+
+    <h2>Galeria de Fotos</h2>
+
+    <div class="galeria">
+        <img src="sitio-vo-ze.webp" alt="Brinquedos artesanais no Sítio Vô Zé">
+        <img src="CasaBrinquedo.webp" alt="Casa dos Brinquedos Artesanais">
+        <img src="CasaSitiovoze.webp" alt="Sítio Vô Zé">
+        <img src="galeriamesa.webp" alt="Utensílios artesanais expostos na cozinha do Sítio Vô Zé">
+        <img src="unnamed.webp" alt="Boneca artesanal exposta no jardim do Sítio Vô Zé">
+    </div>
+
+</section>
+
+<section id="frases">
+
+    <h2>Frases de Destaque da Entrevista</h2>
+
+    <p><a href="Entrevista%20Artista%20Bianca.pdf">Leia a entrevista completa (PDF)</a></p>
+
+    <div class="quote">
+        "A arte foi algo que me ajudou a me posicionar no mundo."
+    </div>
+
+    <div class="quote">
+        "Acredito que a arte é resistência."
+    </div>
+
+    <div class="quote">
+        "A cultura precisa ser democratizada para realmente chegar a todos."
+    </div>
+
+    <div class="quote">
+        "A manutenção da arte depende da continuidade do acesso a ela."
+    </div>
+
+</section>
+
+<section id="frases-artistas">
+
+    <h2>Frases de Artistas Famosos</h2>
+
+    <div class="quote">
+        “A arte não reproduz o visível; torna visível.”
+        <cite>— Paul Klee, “Credo do Criador” (1920)</cite>
+    </div>
+
+    <div class="quote">
+        “A pintura é poesia que se vê, e a poesia é pintura que se sente.”
+        <cite>— Leonardo da Vinci, “Tratado da Pintura”</cite>
+    </div>
+
+    <div class="quote">
+        “A criatividade exige coragem.”
+        <cite>— Henri Matisse</cite>
+    </div>
+
+    <div class="quote">
+        “Estou buscando, estou me esforçando, estou nisso de todo o coração.”
+        <cite>— Vincent van Gogh</cite>
+    </div>
+
+</section>
+
+<section id="ods">
+
+    <h2>Objetivos de Desenvolvimento Sustentável</h2>
+
+    <div class="ods">
+
+        <div>
+            <h3>ODS 11</h3>
+            <p>Cidades e Comunidades Sustentáveis</p>
+        </div>
+
+        <div>
+            <h3>ODS 4</h3>
+            <p>Educação de Qualidade</p>
+        </div>
+
+        <div>
+            <h3>ODS 10</h3>
+            <p>Redução das Desigualdades</p>
+        </div>
+
+        <div>
+            <h3>ODS 16</h3>
+            <p>Paz, Justiça e Instituições Eficazes</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>Cultura Viva Teresópolis</h3>
+
+    <p>
+        Projeto acadêmico desenvolvido para registrar e valorizar
+        artistas, iniciativas culturais e espaços de arte-educação
+        do município de Teresópolis.
+    </p>
+
+    <p>
+        <strong>Localização do Sítio Vô Zé:</strong>
+        Venda Nova, 2º Distrito de Teresópolis, Vale do Paquequer,
+        Teresópolis – RJ, Rio de Janeiro.
+    </p>
+
+    <iframe
+        class="mapa-localizacao"
+        src="https://www.google.com/maps?q=-22.345352,-42.866209&amp;z=16&amp;output=embed"
+        title="Mapa da localização do Sítio Vô Zé"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <p>
+        <strong>Participação:</strong>
+        Tomás Viviani de Aquino, Antônio da Cunha de Aquino,
+        Bianca da Cunha de Aquino e Xando Pernambuco.
+    </p>
+
+</footer>
+
+</body>
+</html>
